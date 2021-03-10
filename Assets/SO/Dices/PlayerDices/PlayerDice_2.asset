@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b5d1444c1571cf4298742d8e26fcda4, type: 3}
+  m_Name: PlayerDice_2
+  m_EditorClassIdentifier: 
+  edges:
+  - {fileID: 11400000, guid: 34f5753bc43eb374cb96922e609650b9, type: 2}
+  - {fileID: 11400000, guid: ef0a51d76a266a74d8e4ea1d7cd245d2, type: 2}
+  - {fileID: 11400000, guid: e4765542ad23b5946b4b5b15e8372940, type: 2}
+  - {fileID: 11400000, guid: ff5ab123de61a07469ae5acfb12b1647, type: 2}
+  - {fileID: 11400000, guid: 1d5e65c732ee620469b2b782c78a0f9e, type: 2}
+  - {fileID: 11400000, guid: 97644d7785d7b244c830a24a4840bf2a, type: 2}
