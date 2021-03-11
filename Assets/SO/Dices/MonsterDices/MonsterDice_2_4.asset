@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3b5d1444c1571cf4298742d8e26fcda4, type: 3}
-  m_Name: MonsterDice_2_2
+  m_Name: MonsterDice_2_4
   m_EditorClassIdentifier: 
   edges:
   - {fileID: 11400000, guid: a8f76438519d9ed4db93912151c7dfe0, type: 2}
   - {fileID: 11400000, guid: 1a286c56113f762478bfcda37a0598ef, type: 2}
-  - {fileID: 11400000, guid: ec814841b6918f6428a8bfbfb2c111e3, type: 2}
-  - {fileID: 11400000, guid: 3a24142759d5b084c87b1bf91e882c98, type: 2}
-  - {fileID: 11400000, guid: 208a65cb24216ca43a8dba3cc203d422, type: 2}
-  - {fileID: 11400000, guid: 3cefca56c2fd94543b6b06a329ab052d, type: 2}
+  - {fileID: 11400000, guid: ef89070af5a47f04081ef34050e4a881, type: 2}
+  - {fileID: 11400000, guid: 12bbd6a58509c9647958aa819d494703, type: 2}
+  - {fileID: 11400000, guid: 12bbd6a58509c9647958aa819d494703, type: 2}
+  - {fileID: 11400000, guid: ef89070af5a47f04081ef34050e4a881, type: 2}

@@ -6,6 +6,9 @@ using UnityEngine;
 public class EdgeSO : ScriptableObject
 {
     [SerializeField]
+    private bool isSpecial;
+
+    [SerializeField]
     private int heal;
 
     [SerializeField]
@@ -27,5 +30,10 @@ public class EdgeSO : ScriptableObject
     public int getDamage()
     {
         return damage;
+    }
+
+    public bool isEdgeSpecial()
+    {
+        return isSpecial;
     }
 }
