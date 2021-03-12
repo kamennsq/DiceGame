@@ -11,9 +11,17 @@ public class MonsterSO : ScriptableObject
     [SerializeField]
     private DiceSO[] dices;
 
+    [SerializeField]
+    private GameObject prefab;
+
     public int getHealth()
     {
         return health;
+    }
+
+    public GameObject getPrefab()
+    {
+        return prefab;
     }
 
     public DiceSO[] getDices()

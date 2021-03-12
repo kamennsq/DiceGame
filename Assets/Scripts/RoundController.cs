@@ -26,6 +26,12 @@ public class RoundController : MonoBehaviour
     [SerializeField]
     private string monsterColor;
 
+    [SerializeField]
+    private GameObject[] objectsToHide;
+
+    [SerializeField]
+    private GameObject[] objectsToShow;
+
     private int tempHealth;
 
     private int tempMonsterHealth;
@@ -36,7 +42,7 @@ public class RoundController : MonoBehaviour
     private int tempHealthM = 0;
     private int tempDamageM = 0;
     private int tempDefenseM = 0;
-    private int tempDefenseP = 0;
+    public int tempDefenseP = 0;
     private int tempHealthP = 0;
     private int tempDamageP = 0;
     private int tempDamageMultiplier = 1;
@@ -48,6 +54,7 @@ public class RoundController : MonoBehaviour
 
     private bool isGreen1Applied = false;
     private bool isGreen10Applied = false;
+    private bool isGreen12Applied = false;
     private bool isBlue12Applied = false;
     private bool isGold7Applied = false;
     private bool isGold12Applied = false;
@@ -160,6 +167,8 @@ public class RoundController : MonoBehaviour
                             case "gold_7": if (!isGold7Applied) skillGold_7(); break;
                             case "gold_12": if (!isGold12Applied) setNewRerollAmount(); break;
                             case "gold_11": if (!isGold11Applied) skillGold_11(); break;
+                            case "gold_3": tempHealth = (int)(tempHealth * 0.3f); endBattle(false); break;
+                            case "green_12": if (!isGreen12Applied) skillGreen_12(); break;
                         }
                     }
                 }
@@ -182,12 +191,13 @@ public class RoundController : MonoBehaviour
             tempMonsterHealth = 20;
         }
 
-        if (playerIgnoresDefense && !needToStunEnemy)
+        if (playerIgnoresDefense)
         {
             tempDefenseM = 0;
         }
-        if (tempDefenseM - tempDamageP * tempDamageMultiplier < 0 && !needToStunEnemy)
+        if (tempDefenseM - tempDamageP * tempDamageMultiplier < 0)
         {
+            if (tempDefenseM < 0) tempDefenseM = 0;
             tempMonsterHealth += (tempDefenseM - tempDamageP * tempDamageMultiplier);
         }
 
@@ -197,18 +207,28 @@ public class RoundController : MonoBehaviour
             tempHealth = 100;
         }
 
-        if (monsterIgnoresDefense)
+        if (monsterIgnoresDefense && !needToStunEnemy)
         {
             tempDefenseP = 0;
         }
-        if (tempDefenseP * tempDefenseMultiplier - tempDamageM < 0)
+        if (tempDefenseP * tempDefenseMultiplier - tempDamageM < 0 && !needToStunEnemy)
         {
+            if (tempDefenseP < 0) tempDefenseM = 0;
             tempHealth += (tempDefenseP * tempDefenseMultiplier - tempDamageM);
         }
         else
         {
             tempDefenseP *= tempDefenseMultiplier;
             tempDefenseP -= tempDamageM;
+        }
+
+        if (tempMonsterHealth <= 0)
+        {
+            endBattle(true);
+        }
+        if (tempHealth <= 0)
+        {
+            endBattle(false);
         }
 
         monsterHealthLabel.text = "Health: " + tempMonsterHealth;
@@ -276,6 +296,10 @@ public class RoundController : MonoBehaviour
             case "HEAL": tempHealthP += value; break;
             case "Reroll": increaseTempRerollAmount(value); break;
         }
+        if (tempDefenseP < 0)
+        {
+            tempDefenseP = 0;
+        }
     }
 
     private void blockDices_2()
@@ -325,6 +349,12 @@ public class RoundController : MonoBehaviour
         increaseMaxHealthBy = 8;
     }
 
+    private void skillGreen_12()
+    {
+        isGreen1Applied = true;
+        increaseMaxHealthBy = 2;
+    }
+
     private void skillGreen_10()
     {
         isGreen10Applied = true;
@@ -349,5 +379,24 @@ public class RoundController : MonoBehaviour
         isGold11Applied = true;
         tempHealth = 10;
         tempMonsterHealth = 10;
+    }
+
+    public void endBattle(bool win)
+    {
+        if (win)
+        {
+            foreach (GameObject curObj in objectsToHide)
+            {
+                curObj.SetActive(false);
+            }
+            foreach (GameObject curObj in objectsToShow)
+            {
+                curObj.SetActive(true);
+            }
+        }
+        else
+        {
+
+        }
     }
 }
