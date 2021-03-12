@@ -57,6 +57,7 @@ public class RoundController : MonoBehaviour
     private bool isGreen12Applied = false;
     private bool isBlue12Applied = false;
     private bool isGold7Applied = false;
+    private bool isGold8Applied = false;
     private bool isGold12Applied = false;
     private bool isGold11Applied = false;
 
@@ -115,7 +116,7 @@ public class RoundController : MonoBehaviour
         {
             if (dice.isSpecial())
             {
-                monsterIgnoresDefense = dice.getSpecialCurrentEdge().isIgnoreEnemyDefense();
+                if (!ignoreAllDefense) monsterIgnoresDefense = dice.getSpecialCurrentEdge().isIgnoreEnemyDefense();
                 tempHealthM += dice.getSpecialCurrentEdge().getHeal();
                 tempDamageM += dice.getSpecialCurrentEdge().getDamage();
                 tempDefenseM += dice.getSpecialCurrentEdge().getDefense();
@@ -133,7 +134,7 @@ public class RoundController : MonoBehaviour
             {
                 if (dice.isSpecial())
                 {
-                    playerIgnoresDefense = dice.getSpecialCurrentEdge().isIgnoreEnemyDefense();
+                    if (!ignoreAllDefense) playerIgnoresDefense = dice.getSpecialCurrentEdge().isIgnoreEnemyDefense();
                     tempDefenseMultiplier = dice.getSpecialCurrentEdge().getDefenseMultiplier();
                     tempDamageMultiplier = dice.getSpecialCurrentEdge().getDamageMultiplier();
                     switch (monsterColor)
@@ -165,6 +166,7 @@ public class RoundController : MonoBehaviour
                             case "green_10": if (!isGreen10Applied) skillGreen_10(); break;
                             case "blue_12": if (!isBlue12Applied) skillBlue_12(); break;
                             case "gold_7": if (!isGold7Applied) skillGold_7(); break;
+                            case "gold_8": if (!isGold8Applied) skillGold_8(); break;
                             case "gold_12": if (!isGold12Applied) setNewRerollAmount(); break;
                             case "gold_11": if (!isGold11Applied) skillGold_11(); break;
                             case "gold_3": tempHealth = (int)(tempHealth * 0.3f); endBattle(false); break;
@@ -372,6 +374,12 @@ public class RoundController : MonoBehaviour
         isGold7Applied = true;
         playerIgnoresDefense = true;
         monsterIgnoresDefense = true;
+    }
+
+    private void skillGold_8()
+    {
+        isGold8Applied = true;
+        increaseMaxHealthBy = 1;
     }
 
     private void skillGold_11()
