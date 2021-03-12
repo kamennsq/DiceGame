@@ -7,12 +7,12 @@ using UnityEngine.Tilemaps;
 public class MapGen : MonoBehaviour
 {
     //public Texture emptyButton;
-    public int[] mapSize = new int[2]{10,10};
+    public Vector3Int mapSize = new Vector3Int(10,10,0);
     
     //public TileSO[] tileTypes;
     //no idea why
     
-    public Tile[] tile;
+    public Tile tile;
     public Tile[] tileTypes;
     public Sprite[] sprite;
     public Tilemap tilemap;
@@ -62,7 +62,25 @@ public class MapGen : MonoBehaviour
             }
         }
         */
-        
+        tilemap.SetTile(new Vector3Int(0,0,0), tile);
+        GoSpawning(new Vector3Int(0,0,0),new Vector3Int(0,1,0));
+    }
+    
+    void GoSpawning(Vector3Int cpos, Vector3Int dir) {
+        while(cpos[0]<mapSize[0] && cpos[1]<mapSize[1] && cpos[0]>-mapSize[0] && cpos[1]>-mapSize[1]) {
+            cpos += dir;
+            tilemap.SetTile(cpos, tile);
+            if(Random.Range(0,100)<10) {
+                print("branch");
+                GoSpawning(cpos,new Vector3Int(1-dir[0],1-dir
+    [1],0));
+            }
+            if(Random.Range(0,100)<10) {
+                print("branch");
+                GoSpawning(cpos,new Vector3Int(1+dir[0],-1+dir
+    [1],0));
+            }
+        }
     }
 
 /*
