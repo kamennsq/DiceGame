@@ -89,6 +89,9 @@ public class SpecialEdgeSO : EdgeSO
     [SerializeField]
     private bool stunEnemy;
 
+    [SerializeField]
+    private string skillName;
+
     public int getExtraDamageToRed()
     {
         return extraDamageToRed;
@@ -222,5 +225,15 @@ public class SpecialEdgeSO : EdgeSO
     public bool needToStun()
     {
         return stunEnemy;
+    }
+
+    public int getNextRoundDamage()
+    {
+        return nextRoundDamageModificator;
+    }
+
+    public string getSkillName()
+    {
+        return skillName;
     }
 }

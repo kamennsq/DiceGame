@@ -17,6 +17,9 @@ public class EdgeSO : ScriptableObject
     [SerializeField]
     private int damage;
 
+    [SerializeField]
+    private Sprite sprite;
+
     public int getHeal()
     {
         return heal;
@@ -35,5 +38,10 @@ public class EdgeSO : ScriptableObject
     public bool isEdgeSpecial()
     {
         return isSpecial;
+    }
+
+    public Sprite getSprite()
+    {
+        return sprite;
     }
 }

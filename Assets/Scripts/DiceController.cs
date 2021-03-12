@@ -16,7 +16,12 @@ public class DiceController : MonoBehaviour
     private PlaceController place_2;
 
     [SerializeField]
+    private PlaceController hiddenPlace;
+
+    [SerializeField]
     private RoundController roundController;
+
+    private bool showHiddenPlace = false;
 
     private int currentPlace;
 
@@ -94,6 +99,13 @@ public class DiceController : MonoBehaviour
                     gameObject.transform.position = new Vector3(place_2.gameObject.transform.position.x, place_2.gameObject.transform.position.y, startPosition.z);
                     capture.gameObject.transform.position = gameObject.transform.position;
                 }
+                else if (hiddenPlace.isPlaceEmpty() && showHiddenPlace)
+                {
+                    hiddenPlace.changeIsEmptyState();
+                    currentPlace = 3;
+                    gameObject.transform.position = new Vector3(hiddenPlace.gameObject.transform.position.x, hiddenPlace.gameObject.transform.position.y, startPosition.z);
+                    capture.gameObject.transform.position = gameObject.transform.position;
+                }
             }
             else
             {
@@ -131,9 +143,16 @@ public class DiceController : MonoBehaviour
             gameObject.transform.position = startPosition;
             capture.gameObject.transform.position = gameObject.transform.position;
         }
-        else
+        else if (currentPlace == 2)
         {
             place_2.changeIsEmptyState();
+            currentPlace = 0;
+            gameObject.transform.position = startPosition;
+            capture.gameObject.transform.position = gameObject.transform.position;
+        }
+        else
+        {
+            hiddenPlace.changeIsEmptyState();
             currentPlace = 0;
             gameObject.transform.position = startPosition;
             capture.gameObject.transform.position = gameObject.transform.position;
@@ -157,5 +176,10 @@ public class DiceController : MonoBehaviour
     public bool isDiceBlocked()
     {
         return isBlocked;
+    }
+
+    public void letUseHiddenPlace()
+    {
+        showHiddenPlace = true;
     }
 }
