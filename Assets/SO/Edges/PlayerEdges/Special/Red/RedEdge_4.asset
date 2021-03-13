@@ -16,7 +16,7 @@ MonoBehaviour:
   heal: 0
   defense: 0
   damage: -2
-  description: DMG 4
+  description: This round DMG -2 but next round DMG 6
   ignoreEnemyDefense: 0
   numberOfBlockedDices: 0
   extraDamageToRed: 0
@@ -43,3 +43,4 @@ MonoBehaviour:
   enemyDefense: 0
   enemyDamage: 0
   enemyHeal: 0
+  stunEnemy: 0

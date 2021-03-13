@@ -16,6 +16,7 @@ MonoBehaviour:
   heal: -5
   defense: 0
   damage: 0
+  sprite: {fileID: 0}
   description: Stuns enemy for 1 round. HEAL -5
   ignoreEnemyDefense: 0
   numberOfBlockedDices: 0
@@ -44,3 +45,4 @@ MonoBehaviour:
   enemyDamage: 0
   enemyHeal: 0
   stunEnemy: 1
+  skillName: 

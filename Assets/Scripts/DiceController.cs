@@ -16,7 +16,12 @@ public class DiceController : MonoBehaviour
     private PlaceController place_2;
 
     [SerializeField]
+    private PlaceController hiddenPlace;
+
+    [SerializeField]
     private RoundController roundController;
+
+    private bool showHiddenPlace = false;
 
     private int currentPlace;
 
@@ -56,6 +61,19 @@ public class DiceController : MonoBehaviour
             {
                 roundController.blockDices(currentSpecialEdge.getNumberOfBlockedDices());
             }
+            if (currentSpecialEdge.isPassiveEdge() && !currentSpecialEdge.isRandomValues())
+            {
+                roundController.applyPassiveModificator("DMG", currentSpecialEdge.getPassiveDamage());
+                roundController.applyPassiveModificator("DEF", currentSpecialEdge.getPassiveDefense());
+                roundController.applyPassiveModificator("HEAL", currentSpecialEdge.getPassiveHeal());
+                roundController.applyPassiveModificator("Reroll", currentSpecialEdge.getExtraRerolls());
+            }
+            if (currentSpecialEdge.isPassiveEdge() && currentSpecialEdge.isRandomValues())
+            {
+                roundController.applyPassiveModificator("DMG", Random.Range(currentSpecialEdge.getRandomDamageMin(), currentSpecialEdge.getRandomDamageMax() + 1));
+                roundController.applyPassiveModificator("DEF", Random.Range(currentSpecialEdge.getRandomDefenseMin(), currentSpecialEdge.getRandomDefenseMax() + 1));
+                roundController.applyPassiveModificator("HEAL", Random.Range(currentSpecialEdge.getRandomHealMin(), currentSpecialEdge.getRandomHealMax() + 1));
+            }
             currentEdge = null;
         }
         else
@@ -92,6 +110,13 @@ public class DiceController : MonoBehaviour
                     place_2.changeIsEmptyState();
                     currentPlace = 2;
                     gameObject.transform.position = new Vector3(place_2.gameObject.transform.position.x, place_2.gameObject.transform.position.y, startPosition.z);
+                    capture.gameObject.transform.position = gameObject.transform.position;
+                }
+                else if (hiddenPlace.isPlaceEmpty() && showHiddenPlace)
+                {
+                    hiddenPlace.changeIsEmptyState();
+                    currentPlace = 3;
+                    gameObject.transform.position = new Vector3(hiddenPlace.gameObject.transform.position.x, hiddenPlace.gameObject.transform.position.y, startPosition.z);
                     capture.gameObject.transform.position = gameObject.transform.position;
                 }
             }
@@ -131,9 +156,16 @@ public class DiceController : MonoBehaviour
             gameObject.transform.position = startPosition;
             capture.gameObject.transform.position = gameObject.transform.position;
         }
-        else
+        else if (currentPlace == 2)
         {
             place_2.changeIsEmptyState();
+            currentPlace = 0;
+            gameObject.transform.position = startPosition;
+            capture.gameObject.transform.position = gameObject.transform.position;
+        }
+        else if (currentPlace == 3)
+        {
+            hiddenPlace.changeIsEmptyState();
             currentPlace = 0;
             gameObject.transform.position = startPosition;
             capture.gameObject.transform.position = gameObject.transform.position;
@@ -157,5 +189,10 @@ public class DiceController : MonoBehaviour
     public bool isDiceBlocked()
     {
         return isBlocked;
+    }
+
+    public void letUseHiddenPlace()
+    {
+        showHiddenPlace = true;
     }
 }
