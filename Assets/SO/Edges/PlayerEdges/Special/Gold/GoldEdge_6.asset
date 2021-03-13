@@ -16,6 +16,8 @@ MonoBehaviour:
   heal: 0
   defense: 0
   damage: 0
+  sprite: {fileID: 0}
+  tipText: Your defense and damage are miltiplied by 2 for the round
   description: DEF x2 and DMG x2
   ignoreEnemyDefense: 0
   numberOfBlockedDices: 0
@@ -44,3 +46,4 @@ MonoBehaviour:
   enemyDamage: 0
   enemyHeal: 0
   stunEnemy: 0
+  skillName: 

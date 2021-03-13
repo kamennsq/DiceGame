@@ -16,6 +16,9 @@ MonoBehaviour:
   heal: 0
   defense: 0
   damage: -2
+  sprite: {fileID: 0}
+  tipText: Your damage is decreased by 2 for the round but it will be increased by
+    6 in the next one
   description: This round DMG -2 but next round DMG 6
   ignoreEnemyDefense: 0
   numberOfBlockedDices: 0
@@ -44,3 +47,4 @@ MonoBehaviour:
   enemyDamage: 0
   enemyHeal: 0
   stunEnemy: 0
+  skillName: 

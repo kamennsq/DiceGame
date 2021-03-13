@@ -16,6 +16,9 @@ MonoBehaviour:
   heal: 0
   defense: 0
   damage: 1
+  sprite: {fileID: 0}
+  tipText: You passively restores 1 health point and increase you damage by 1 for
+    the round, no matter if this edge is chosen
   description: Passive HEAL 1 and DMG 1
   ignoreEnemyDefense: 0
   numberOfBlockedDices: 0
@@ -44,3 +47,4 @@ MonoBehaviour:
   enemyDamage: 0
   enemyHeal: 0
   stunEnemy: 0
+  skillName: 

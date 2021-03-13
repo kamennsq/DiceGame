@@ -17,6 +17,9 @@ MonoBehaviour:
   defense: 0
   damage: 0
   sprite: {fileID: 0}
+  tipText: You gain 1 extra reroll for the rest of the fight. Can be activated only
+    one time for the fight! Passively increase your defense and damage by 1 for the
+    round, no matter if chosen
   description: 1 extra reroll for the rest of the fight. Passive DMG 1 and Passive
     DEF 1
   ignoreEnemyDefense: 0

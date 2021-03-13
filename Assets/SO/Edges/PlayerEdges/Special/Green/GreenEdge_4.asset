@@ -16,6 +16,8 @@ MonoBehaviour:
   heal: 5
   defense: -7
   damage: 0
+  sprite: {fileID: 0}
+  tipText: You restore 5 health points but loose 7 defense for the round
   description: HEAL 5 and DEF -7
   ignoreEnemyDefense: 0
   numberOfBlockedDices: 0
@@ -44,3 +46,4 @@ MonoBehaviour:
   enemyDamage: 0
   enemyHeal: 0
   stunEnemy: 0
+  skillName: 

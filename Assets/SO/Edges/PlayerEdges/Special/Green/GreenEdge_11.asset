@@ -16,6 +16,8 @@ MonoBehaviour:
   heal: 5
   defense: 0
   damage: 0
+  sprite: {fileID: 0}
+  tipText: You restore 5 health points but the monster's damage is increased by 5
   description: HEAL 5 and enemy DMG 5
   ignoreEnemyDefense: 0
   numberOfBlockedDices: 0
@@ -44,3 +46,4 @@ MonoBehaviour:
   enemyDamage: 5
   enemyHeal: 0
   stunEnemy: 0
+  skillName: 

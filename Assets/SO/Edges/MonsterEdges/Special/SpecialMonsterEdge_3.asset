@@ -16,6 +16,8 @@ MonoBehaviour:
   heal: 0
   defense: 0
   damage: 0
+  sprite: {fileID: 0}
+  tipText: Blocks 1 random hero's dice
   description: Blocks 1 enemy's dice
   ignoreEnemyDefense: 0
   numberOfBlockedDices: 1
@@ -43,3 +45,5 @@ MonoBehaviour:
   enemyDefense: 0
   enemyDamage: 0
   enemyHeal: 0
+  stunEnemy: 0
+  skillName: 

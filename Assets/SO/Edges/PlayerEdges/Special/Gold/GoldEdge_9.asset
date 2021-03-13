@@ -16,6 +16,8 @@ MonoBehaviour:
   heal: 0
   defense: 0
   damage: 0
+  sprite: {fileID: 0}
+  tipText: Copy the edge of another dice
   description: Copy the edge of another dice
   ignoreEnemyDefense: 0
   numberOfBlockedDices: 0
@@ -44,3 +46,4 @@ MonoBehaviour:
   enemyDamage: 0
   enemyHeal: 0
   stunEnemy: 0
+  skillName: 

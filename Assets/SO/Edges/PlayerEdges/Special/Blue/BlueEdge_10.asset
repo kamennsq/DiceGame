@@ -16,6 +16,8 @@ MonoBehaviour:
   heal: 0
   defense: 5
   damage: -1
+  sprite: {fileID: 0}
+  tipText: You gain 5 defense but your damage is decreased by 1 for the round
   description: DEF 5 and DMG -1
   ignoreEnemyDefense: 0
   numberOfBlockedDices: 0
@@ -44,3 +46,4 @@ MonoBehaviour:
   enemyDamage: 0
   enemyHeal: 0
   stunEnemy: 0
+  skillName: 

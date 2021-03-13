@@ -16,6 +16,8 @@ MonoBehaviour:
   heal: 0
   defense: 1
   damage: 3
+  sprite: {fileID: 0}
+  tipText: You deal 3 damage to monster and gain 1 defense for the round
   description: DMG 3 and DEF 1
   ignoreEnemyDefense: 0
   numberOfBlockedDices: 0
@@ -44,3 +46,4 @@ MonoBehaviour:
   enemyDamage: 0
   enemyHeal: 0
   stunEnemy: 0
+  skillName: 

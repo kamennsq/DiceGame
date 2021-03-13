@@ -16,6 +16,8 @@ MonoBehaviour:
   heal: 0
   defense: 0
   damage: 0
+  sprite: {fileID: 0}
+  tipText: You can randomly get from 3 to 5 defense for the round
   description: DEF 3-5?
   ignoreEnemyDefense: 0
   numberOfBlockedDices: 0
@@ -44,3 +46,4 @@ MonoBehaviour:
   enemyDamage: 0
   enemyHeal: 0
   stunEnemy: 0
+  skillName: 

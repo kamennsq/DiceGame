@@ -20,6 +20,9 @@ public class EdgeSO : ScriptableObject
     [SerializeField]
     private Sprite sprite;
 
+    [SerializeField]
+    private string tipText;
+
     public int getHeal()
     {
         return heal;
@@ -43,5 +46,10 @@ public class EdgeSO : ScriptableObject
     public Sprite getSprite()
     {
         return sprite;
+    }
+
+    public string getTipText()
+    {
+        return tipText;
     }
 }

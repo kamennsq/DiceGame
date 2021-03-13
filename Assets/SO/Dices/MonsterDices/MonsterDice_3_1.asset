@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b5d1444c1571cf4298742d8e26fcda4, type: 3}
+  m_Name: MonsterDice_3_1
+  m_EditorClassIdentifier: 
+  edges:
+  - {fileID: 11400000, guid: 0e727c35fa01d5640a270df90da4ed5b, type: 2}
+  - {fileID: 11400000, guid: eb283af77f9d66d4fb378d56d050d4f3, type: 2}
+  - {fileID: 11400000, guid: e895f5ebe40775541b514e423062e03c, type: 2}
+  - {fileID: 11400000, guid: 0e727c35fa01d5640a270df90da4ed5b, type: 2}
+  - {fileID: 11400000, guid: e895f5ebe40775541b514e423062e03c, type: 2}
+  - {fileID: 11400000, guid: 3cefca56c2fd94543b6b06a329ab052d, type: 2}
