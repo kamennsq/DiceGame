@@ -21,7 +21,7 @@ public class MapHerpCon : MonoBehaviour
     void Update()
     {
         //pos += new Vector3Int((int)(0));
-        transform.position = pos;
+        //transform.position = pos;
         undpt = tilemap.GetTile(pos);
         TileBase adjt;
         adjt = tilemap.GetTile(pos+ new Vector3Int(1,0,0));

@@ -16,6 +16,8 @@ public class MapGen : MonoBehaviour
     public Tile[] tileTypes;
     public Sprite[] sprite;
     public Tilemap tilemap;
+    public Tilemap connectormap;
+    public Tile[] connectors;
     
 /*
     public struct Tile {
@@ -70,14 +72,14 @@ public class MapGen : MonoBehaviour
         while(cpos[0]<mapSize[0] && cpos[1]<mapSize[1] && cpos[0]>-mapSize[0] && cpos[1]>-mapSize[1]) {
             cpos += dir;
             tilemap.SetTile(cpos, tile);
-            if(Random.Range(0,100)<10) {
+            if(Random.Range(0,100)<5) {
                 print("branch");
                 GoSpawning(cpos,new Vector3Int(1-dir[0],1-dir
     [1],0));
             }
-            if(Random.Range(0,100)<10) {
+            if(Random.Range(0,100)<5) {
                 print("branch");
-                GoSpawning(cpos,new Vector3Int(1+dir[0],-1+dir
+                GoSpawning(cpos,new Vector3Int(-1+dir[0],-1+dir
     [1],0));
             }
         }
