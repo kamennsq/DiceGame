@@ -27,6 +27,9 @@ public class RoundController : MonoBehaviour
     private string monsterColor;
 
     [SerializeField]
+    private string winColor;
+
+    [SerializeField]
     private GameObject[] objectsToHide;
 
     [SerializeField]
@@ -72,9 +75,10 @@ public class RoundController : MonoBehaviour
     void Start()
     {
         tempHealth = 100;
-        tempMonsterHealth = 20;
+        tempMonsterHealth = 2;
         rerollAmount = 1;
         tempRerollAmount = rerollAmount;
+        winColor = monsterColor;
     }
 
     // Update is called once per frame
@@ -182,7 +186,6 @@ public class RoundController : MonoBehaviour
                 }
             }
         }
-
         if (!needToStunEnemy)
         {
             tempMonsterHealth += tempHealthM;
@@ -224,15 +227,6 @@ public class RoundController : MonoBehaviour
             tempDefenseP -= tempDamageM;
         }
 
-        if (tempMonsterHealth <= 0)
-        {
-            endBattle(true);
-        }
-        if (tempHealth <= 0)
-        {
-            endBattle(false);
-        }
-
         monsterHealthLabel.text = "Health: " + tempMonsterHealth;
         heroHealthLabel.text = "Health: " + tempHealth;
         tempRerollAmount = rerollAmount;
@@ -247,6 +241,14 @@ public class RoundController : MonoBehaviour
         }
 
         setParametersAsDefault();
+        if (tempMonsterHealth <= 0)
+        {
+            endBattle(true);
+        }
+        if (tempHealth <= 0)
+        {
+            endBattle(false);
+        }
     }
 
     public void blockDices(int index)
@@ -401,6 +403,7 @@ public class RoundController : MonoBehaviour
             {
                 curObj.SetActive(true);
             }
+            gameObject.GetComponent<WinController>().startRewarding(winColor);
         }
         else
         {

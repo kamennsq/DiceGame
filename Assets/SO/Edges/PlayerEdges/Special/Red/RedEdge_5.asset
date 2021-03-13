@@ -16,6 +16,8 @@ MonoBehaviour:
   heal: -5
   defense: 0
   damage: 11
+  sprite: {fileID: 0}
+  tipText: You loose 5 health and deal 11 damage to monster
   description: DMG 11 but HEAL -5
   ignoreEnemyDefense: 0
   numberOfBlockedDices: 0
@@ -43,3 +45,5 @@ MonoBehaviour:
   enemyDefense: 0
   enemyDamage: 0
   enemyHeal: 0
+  stunEnemy: 0
+  skillName: 

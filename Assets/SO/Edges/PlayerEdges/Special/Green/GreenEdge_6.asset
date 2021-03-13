@@ -16,6 +16,9 @@ MonoBehaviour:
   heal: 1
   defense: 1
   damage: 1
+  sprite: {fileID: 0}
+  tipText: You restore 1 health and gain 1 defense for the round and deal 1 damage
+    to monster
   description: HEAL 1 and DMG 1 and DEF 1
   ignoreEnemyDefense: 0
   numberOfBlockedDices: 0
@@ -44,3 +47,4 @@ MonoBehaviour:
   enemyDamage: 0
   enemyHeal: 0
   stunEnemy: 0
+  skillName: 

@@ -16,6 +16,8 @@ MonoBehaviour:
   heal: 0
   defense: 2
   damage: 2
+  sprite: {fileID: 0}
+  tipText: You deal 2 damage to monster and gain 2 defense for the round
   description: DMG 2 and DEF 2
   ignoreEnemyDefense: 0
   numberOfBlockedDices: 0
@@ -44,3 +46,4 @@ MonoBehaviour:
   enemyDamage: 0
   enemyHeal: 0
   stunEnemy: 0
+  skillName: 

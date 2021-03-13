@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35bd115b5404ea54a970bf1d9dac1b1e, type: 3}
   m_Name: MonsterEdge_2_8
   m_EditorClassIdentifier: 
+  isSpecial: 0
   heal: 0
   defense: 5
   damage: 0
+  sprite: {fileID: 0}
+  tipText: Monster gains 5 defense for the round

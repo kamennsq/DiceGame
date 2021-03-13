@@ -17,6 +17,8 @@ MonoBehaviour:
   defense: 0
   damage: 0
   sprite: {fileID: 0}
+  tipText: Keep defense when round ends. You can have as much defense as you can
+    gain. Passively decreases your defense by 10 for the round, no matter if chosen
   description: Keep defense when round ends. Passive DEF -10
   ignoreEnemyDefense: 0
   numberOfBlockedDices: 0

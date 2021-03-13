@@ -17,6 +17,8 @@ MonoBehaviour:
   defense: 0
   damage: 0
   sprite: {fileID: 0}
+  tipText: You can escape from the fight but you will loose 30% of the current health
+    and will NOT get any rewards
   description: Run away and loose 30% of health
   ignoreEnemyDefense: 0
   numberOfBlockedDices: 0

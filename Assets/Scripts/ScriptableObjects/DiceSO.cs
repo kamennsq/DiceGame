@@ -24,4 +24,12 @@ public class DiceSO : ScriptableObject
             return edges[0];
         }
     }
+
+    public void replaceEdgeByIndex(EdgeSO newEdge, int index)
+    {
+        if (index >= 0 && index < 6)
+        {
+            edges[index] = newEdge;
+        }
+    }
 }

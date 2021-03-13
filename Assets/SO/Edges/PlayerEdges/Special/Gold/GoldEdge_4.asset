@@ -17,6 +17,9 @@ MonoBehaviour:
   defense: 0
   damage: 0
   sprite: {fileID: 0}
+  tipText: Provide you with ability to choose 1 more dice. You can activate this
+    edge only one time for the fight! Passively decreases your damage by 3 for the
+    round, no matter if chosen
   description: Provide you with ability to choose 1 more dice. Passive DMG -3
   ignoreEnemyDefense: 0
   numberOfBlockedDices: 0

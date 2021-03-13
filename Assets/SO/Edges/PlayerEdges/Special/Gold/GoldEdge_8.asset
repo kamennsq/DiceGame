@@ -17,6 +17,9 @@ MonoBehaviour:
   defense: 0
   damage: 0
   sprite: {fileID: 0}
+  tipText: You passively increase your damage from 0 to 2, your defense from 0 to
+    2 and restore from -2 to 2 health points chosen randomly, no matter if the edge
+    is chosen
   description: 'All Passive: DMG 0-2? DEF 0-2? HEAL -2-2?. Your max health increased
     by 1'
   ignoreEnemyDefense: 0

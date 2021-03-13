@@ -16,6 +16,8 @@ MonoBehaviour:
   heal: -10
   defense: 0
   damage: 0
+  sprite: {fileID: 0}
+  tipText: You loose 10 health points and starts to gain 1 damage each round
   description: HEAL -10. Increase your DMG by 1 every round
   ignoreEnemyDefense: 0
   numberOfBlockedDices: 0
@@ -44,3 +46,4 @@ MonoBehaviour:
   enemyDamage: 0
   enemyHeal: 0
   stunEnemy: 0
+  skillName: 

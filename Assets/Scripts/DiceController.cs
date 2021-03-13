@@ -21,6 +21,21 @@ public class DiceController : MonoBehaviour
     [SerializeField]
     private RoundController roundController;
 
+    [SerializeField]
+    private GameObject tipObject;
+
+    [SerializeField]
+    private Text tipText;
+
+    /*[SerializeField]
+    private Text damageText;
+
+    [SerializeField]
+    private Text defenseText;
+
+    [SerializeField]
+    private Text healText;*/
+
     private bool showHiddenPlace = false;
 
     private int currentPlace;
@@ -94,7 +109,7 @@ public class DiceController : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (!isBlocked)
+        if (!isBlocked && !gameObject.transform.name.Contains("DiceM"))
         {
             if (currentPlace == 0)
             {
@@ -194,5 +209,28 @@ public class DiceController : MonoBehaviour
     public void letUseHiddenPlace()
     {
         showHiddenPlace = true;
+    }
+
+    private void OnMouseEnter()
+    {
+        if (currentEdge != null || currentSpecialEdge != null)
+        {
+            tipObject.SetActive(true);
+            tipText.gameObject.SetActive(true);
+            if (isSpecial())
+            {
+                tipText.text = currentSpecialEdge.getTipText();
+            }
+            else
+            {
+                tipText.text = currentEdge.getTipText();
+            }
+        }
+    }
+
+    private void OnMouseExit()
+    {
+        tipObject.SetActive(false);
+        tipText.gameObject.SetActive(false);
     }
 }

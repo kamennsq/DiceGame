@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35bd115b5404ea54a970bf1d9dac1b1e, type: 3}
   m_Name: MonsterEdge_3_7
   m_EditorClassIdentifier: 
+  isSpecial: 0
   heal: 1
   defense: 0
   damage: 1
+  sprite: {fileID: 0}
+  tipText: Monster restores 1 health point and deals 1 damage to hero

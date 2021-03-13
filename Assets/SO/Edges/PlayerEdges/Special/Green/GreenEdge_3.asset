@@ -16,6 +16,8 @@ MonoBehaviour:
   heal: 1
   defense: 0
   damage: 2
+  sprite: {fileID: 0}
+  tipText: You restore 1 health point and deal 2 damage to monster
   description: DMG 2 and HEAL 1
   ignoreEnemyDefense: 0
   numberOfBlockedDices: 0
@@ -44,3 +46,4 @@ MonoBehaviour:
   enemyDamage: 0
   enemyHeal: 0
   stunEnemy: 0
+  skillName: 
