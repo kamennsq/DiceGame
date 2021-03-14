@@ -701,10 +701,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dragons:
+  - {fileID: 6136052402066853516, guid: 03772de276d1ecc2cb6ea82ce8e7bd57, type: 3}
+  - {fileID: 6136052402066853516, guid: 9a086c1fe55124c91968b365b397dbe6, type: 3}
   - {fileID: 6136052402066853516, guid: 6696ada84ad0ba1f5b908475a5a6ad1f, type: 3}
-  - {fileID: 6136052402066853516, guid: 6696ada84ad0ba1f5b908475a5a6ad1f, type: 3}
-  - {fileID: 6136052402066853516, guid: 6696ada84ad0ba1f5b908475a5a6ad1f, type: 3}
-  - {fileID: 6136052402066853516, guid: 6696ada84ad0ba1f5b908475a5a6ad1f, type: 3}
+  - {fileID: 6136052402066853516, guid: a2fef4ac7576e9556b40c9a86fda03c5, type: 3}
+  - {fileID: 6136052402066853516, guid: 009ff7d3219cace73aaa67d668122127, type: 3}
+  - {fileID: 6136052402066853516, guid: 564a730a74f0771ecbdb31541aa34f90, type: 3}
+  - {fileID: 6136052402066853516, guid: bb635b7afeb11017cba4b6a16ff5c484, type: 3}
+  - {fileID: 6136052402066853516, guid: 1e19ae4641f89c888ab505005ded4b54, type: 3}
+  - {fileID: 6136052402066853516, guid: 1cb43b746c320c4cca90a75400adaa1b, type: 3}
+  - {fileID: 6136052402066853516, guid: 9dc90eb171225731b933213d7b641e74, type: 3}
+  - {fileID: 6136052402066853516, guid: 0f34dd3109a54c072a2ad7db9d89a8cc, type: 3}
+  - {fileID: 6136052402066853516, guid: 524dc26acf72c7c838e514680ee06387, type: 3}
   playerSO: {fileID: 11400000, guid: 6bbe926fa63779ac5905ce220dc7aa6a, type: 2}
   blocking: {fileID: 6586006727440761517, guid: affe4b33bd15c37e79248c9b9ee5ceb8,
     type: 3}
