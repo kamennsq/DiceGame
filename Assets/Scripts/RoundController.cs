@@ -93,6 +93,7 @@ public class RoundController : MonoBehaviour
                 monsterDices[1].setDice(monster.getDiceByIndex(1));
                 monsterColor = monster.getColor();
                 currentMonster = Instantiate(monster.getPrefab());
+                monster.changeChoose();
                 break;
             }
         }
@@ -446,6 +447,7 @@ public class RoundController : MonoBehaviour
             hero.setCurrentHealth(tempHealth);
             hero.setMaxHealth(hero.getMaxHealth() + increaseMaxHealthBy);
             Destroy(currentMonster);
+            UnityEngine.SceneManagement.SceneManager.LoadScene(0);
         }
     }
 }

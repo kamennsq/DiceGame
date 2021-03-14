@@ -237,5 +237,6 @@ public class WinController : MonoBehaviour
             case 22: playerDices[3].replaceEdgeByIndex(rewards[chosenReward].GetComponent<RewardEdgeController>().getEdge(), 4); break;
             case 23: playerDices[3].replaceEdgeByIndex(rewards[chosenReward].GetComponent<RewardEdgeController>().getEdge(), 5); break;
         }
+        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
     }
 }
