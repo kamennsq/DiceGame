@@ -8,6 +8,8 @@ using UnityEngine.UI;
 public class LoadLevel : MonoBehaviour
 {
     //public GameObject dragons;
+    public short side;
+    public PlayerSO playerSO;
     
     // Start is called before the first frame update
     void Awake()
@@ -25,5 +27,6 @@ public class LoadLevel : MonoBehaviour
     public void LodeLevel()
     {
         SceneManager.LoadScene("FightScene");
+        playerSO.side = side;
     }
 }

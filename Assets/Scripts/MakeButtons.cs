@@ -13,11 +13,13 @@ public class MakeButtons : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for(int i=0;i<4;i++){
+        for(short i=0;i<4;i++){
             if(playerSO.side==i) {
                 Instantiate(blocking, new Vector3(positions[i][0],positions[i][1],0) + transform.position, new Quaternion(), transform);
             } else {
                 var o = Instantiate(dragons[Random.Range(0,dragons.Length-1)], new Vector3(positions[i][0],positions[i][1],0) + transform.position, new Quaternion(), transform);
+                o.GetComponent<LoadLevel>().side=i;
+                o.GetComponent<LoadLevel>().playerSO = playerSO;
             }
         }
     }
