@@ -713,7 +713,7 @@ MonoBehaviour:
   - {fileID: 6136052402066853516, guid: 9dc90eb171225731b933213d7b641e74, type: 3}
   - {fileID: 6136052402066853516, guid: 0f34dd3109a54c072a2ad7db9d89a8cc, type: 3}
   - {fileID: 6136052402066853516, guid: 524dc26acf72c7c838e514680ee06387, type: 3}
-  playerSO: {fileID: 11400000, guid: 6bbe926fa63779ac5905ce220dc7aa6a, type: 2}
+  playerSO: {fileID: 11400000, guid: 87ac6c4b8f294b24da76f2b2f63517e8, type: 2}
   blocking: {fileID: 6586006727440761517, guid: affe4b33bd15c37e79248c9b9ee5ceb8,
     type: 3}
   positions:

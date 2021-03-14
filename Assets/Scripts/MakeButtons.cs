@@ -6,7 +6,7 @@ public class MakeButtons : MonoBehaviour
 {
     public GameObject[] dragons;
     //public short side=0;
-    public PlayerSO playerSO;
+    public HeroSO playerSO;
     public GameObject blocking;
     public Vector2[] positions = new Vector2[4];
     
@@ -18,7 +18,12 @@ public class MakeButtons : MonoBehaviour
                 Instantiate(blocking, new Vector3(positions[i][0],positions[i][1],0) + transform.position, new Quaternion(), transform);
             } else {
                 var o = Instantiate(dragons[Random.Range(0,dragons.Length-1)], new Vector3(positions[i][0],positions[i][1],0) + transform.position, new Quaternion(), transform);
-                o.GetComponent<LoadLevel>().side=i;
+                short s=0;
+                if(i==0) s=2;
+                if(i==1) s=3;
+                if(i==2) s=0;
+                if(i==3) s=1;
+                o.GetComponent<LoadLevel>().side=s;
                 o.GetComponent<LoadLevel>().playerSO = playerSO;
             }
         }

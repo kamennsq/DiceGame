@@ -9,7 +9,7 @@ public class LoadLevel : MonoBehaviour
 {
     //public GameObject dragons;
     public short side;
-    public PlayerSO playerSO;
+    public HeroSO playerSO;
     
     // Start is called before the first frame update
     void Awake()
