@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RewardEdgeController : MonoBehaviour
 {
@@ -11,6 +12,15 @@ public class RewardEdgeController : MonoBehaviour
 
     [SerializeField]
     private int index;
+
+    [SerializeField]
+    private Text capture;
+
+    [SerializeField]
+    private GameObject tipObject;
+
+    [SerializeField]
+    private Text tipText;
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +37,17 @@ public class RewardEdgeController : MonoBehaviour
     public void setEdge(EdgeSO newEdge)
     {
         rewardEdge = newEdge;
-        gameObject.GetComponent<SpriteRenderer>().sprite = rewardEdge.getSprite();
+        capture.gameObject.SetActive(true);
+        capture.gameObject.transform.position = gameObject.transform.position;
+        if (rewardEdge.getDescription().Equals(""))
+        {
+            capture.text = "DMG " + rewardEdge.getDamage() + "\nDEF " + rewardEdge.getDefense() + "\nHEAL " + rewardEdge.getHeal();
+        }
+        else 
+        { 
+            capture.text = rewardEdge.getDescription(); 
+        }
+        //gameObject.GetComponent<SpriteRenderer>().sprite = rewardEdge.getSprite();
     }
 
     private void OnMouseDown()
@@ -45,5 +65,18 @@ public class RewardEdgeController : MonoBehaviour
     public EdgeSO getEdge()
     {
         return rewardEdge;
+    }
+
+    private void OnMouseEnter()
+    {
+        tipObject.SetActive(true);
+        tipText.gameObject.SetActive(true);
+        tipText.text = rewardEdge.getTipText();
+    }
+
+    private void OnMouseExit()
+    {
+        tipObject.SetActive(false);
+        tipText.gameObject.SetActive(false);
     }
 }

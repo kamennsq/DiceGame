@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New SpecialEdge SO", menuName = "SpecialEgde SO", order = 53)]
+[CreateAssetMenu(fileName = "New SpecialEdge SO", menuName = "SpecialEgde SO", order = 54)]
 public class SpecialEdgeSO : EdgeSO
 {
-    [SerializeField]
-    private string description;
+    /*[SerializeField]
+    private string description;*/
 
     [SerializeField]
     private bool ignoreEnemyDefense;
@@ -112,10 +112,10 @@ public class SpecialEdgeSO : EdgeSO
         return extraDamageToGold;
     }
 
-    public string getDescription()
+    /*public string getDescription()
     {
         return description;
-    }
+    }*/
 
     public bool isIgnoreEnemyDefense()
     {

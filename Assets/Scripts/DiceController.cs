@@ -57,6 +57,7 @@ public class DiceController : MonoBehaviour
         currentPlace = 0;
         startPosition = gameObject.transform.position;
         capture.gameObject.transform.position = gameObject.transform.position;
+        gameObject.GetComponent<SpriteRenderer>().color = Color.white;
     }
 
     // Update is called once per frame
@@ -194,11 +195,13 @@ public class DiceController : MonoBehaviour
         {
             returnToStartPosition();
         }
+        gameObject.GetComponent<SpriteRenderer>().color = Color.gray;
     }
 
     public void unblockDice()
     {
         isBlocked = false;
+        gameObject.GetComponent<SpriteRenderer>().color = Color.white;
     }
 
     public bool isDiceBlocked()
@@ -232,5 +235,10 @@ public class DiceController : MonoBehaviour
     {
         tipObject.SetActive(false);
         tipText.gameObject.SetActive(false);
+    }
+
+    public void setDice(DiceSO newDice)
+    {
+        dice = newDice;
     }
 }

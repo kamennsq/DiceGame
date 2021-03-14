@@ -23,6 +23,9 @@ public class EdgeSO : ScriptableObject
     [SerializeField]
     private string tipText;
 
+    [SerializeField]
+    private string description;
+
     public int getHeal()
     {
         return heal;
@@ -51,5 +54,10 @@ public class EdgeSO : ScriptableObject
     public string getTipText()
     {
         return tipText;
+    }
+
+    public string getDescription()
+    {
+        return description;
     }
 }

@@ -71,14 +71,38 @@ public class RoundController : MonoBehaviour
     [SerializeField]
     private GameEvent showThirdPlace;
 
+    private bool isFirstRoll;
+
+    [SerializeField]
+    private MonsterSO[] monsters;
+
+    private GameObject currentMonster;
+
+    [SerializeField]
+    private HeroSO hero;
+
     // Start is called before the first frame update
     void Start()
-    {
-        tempHealth = 100;
-        tempMonsterHealth = 2;
+    { 
+        foreach (MonsterSO monster in monsters)
+        {
+            if (monster.isThisChosen())
+            {
+                tempMonsterHealth = monster.getHealth();
+                monsterDices[0].setDice(monster.getDiceByIndex(0));
+                monsterDices[1].setDice(monster.getDiceByIndex(1));
+                monsterColor = monster.getColor();
+                currentMonster = Instantiate(monster.getPrefab());
+                break;
+            }
+        }
+        tempHealth = hero.getCurrentHealth();
         rerollAmount = 1;
         tempRerollAmount = rerollAmount;
         winColor = monsterColor;
+        isFirstRoll = true;
+        monsterHealthLabel.text = "Health: " + tempMonsterHealth;
+        heroHealthLabel.text = "Health: " + tempHealth;
     }
 
     // Update is called once per frame
@@ -87,26 +111,34 @@ public class RoundController : MonoBehaviour
         
     }
 
-    public void throwTheDice()
+    private void throwTheDice()
     {
         throwDiceEvent.Raise();
         GameObject.Find("CountButton").GetComponent<Button>().interactable = true;
-        GameObject.Find("RerollButton").GetComponent<Button>().interactable = true;
-        GameObject.Find("RollButton").GetComponent<Button>().interactable = false;
+        //GameObject.Find("RerollButton").GetComponent<Button>().interactable = true;
+        //GameObject.Find("RollButton").GetComponent<Button>().interactable = false;
     }
 
     public void rerollTheDice()
     {
-        if (tempRerollAmount > 0)
+        if (isFirstRoll)
         {
-            rerollDiceEvent.Raise();
-            tempRerollAmount -= 1;
+            isFirstRoll = false;
+            throwTheDice();
         }
-        if (tempRerollAmount <= 0)
+        else
         {
-            tempRerollAmount = 0;
-            GameObject.Find("RerollButton").GetComponent<Button>().interactable = false;
-        }
+            if (tempRerollAmount > 0)
+            {
+                rerollDiceEvent.Raise();
+                tempRerollAmount -= 1;
+            }
+            if (tempRerollAmount <= 0)
+            {
+                tempRerollAmount = 0;
+                //GameObject.Find("RerollButton").GetComponent<Button>().interactable = false;
+            }
+        }     
     }
 
     public void calculateValues()
@@ -207,9 +239,9 @@ public class RoundController : MonoBehaviour
         }
 
         tempHealth += tempHealthP;
-        if (tempHealth > 100)
+        if (tempHealth > hero.getMaxHealth())
         {
-            tempHealth = 100;
+            tempHealth = hero.getMaxHealth();
         }
 
         if (monsterIgnoresDefense && !needToStunEnemy)
@@ -231,8 +263,8 @@ public class RoundController : MonoBehaviour
         heroHealthLabel.text = "Health: " + tempHealth;
         tempRerollAmount = rerollAmount;
         GameObject.Find("CountButton").GetComponent<Button>().interactable = false;
-        GameObject.Find("RerollButton").GetComponent<Button>().interactable = false;
-        GameObject.Find("RollButton").GetComponent<Button>().interactable = true;
+        //GameObject.Find("RerollButton").GetComponent<Button>().interactable = false;
+        //GameObject.Find("RollButton").GetComponent<Button>().interactable = true;
         
         foreach (DiceController dice in playerDices)
         {
@@ -270,10 +302,10 @@ public class RoundController : MonoBehaviour
     private void increaseTempRerollAmount(int amount)
     {
         tempRerollAmount += amount;
-        if (!GameObject.Find("RerollButton").GetComponent<Button>().interactable)
+        /*if (!GameObject.Find("RerollButton").GetComponent<Button>().interactable)
         {
             GameObject.Find("RerollButton").GetComponent<Button>().interactable = true;
-        }
+        }*/
     }
 
     private void setParametersAsDefault()
@@ -289,6 +321,7 @@ public class RoundController : MonoBehaviour
         if (!ignoreAllDefense) monsterIgnoresDefense = false;
         if (!ignoreAllDefense) playerIgnoresDefense = false;
         needToStunEnemy = false;
+        isFirstRoll = true;
 }
 
     public void applyPassiveModificator(string parameter, int value)
@@ -403,11 +436,16 @@ public class RoundController : MonoBehaviour
             {
                 curObj.SetActive(true);
             }
+            Destroy(currentMonster);
             gameObject.GetComponent<WinController>().startRewarding(winColor);
+            hero.setCurrentHealth(tempHealth);
+            hero.setMaxHealth(hero.getMaxHealth() + increaseMaxHealthBy);
         }
         else
         {
-
+            hero.setCurrentHealth(tempHealth);
+            hero.setMaxHealth(hero.getMaxHealth() + increaseMaxHealthBy);
+            Destroy(currentMonster);
         }
     }
 }

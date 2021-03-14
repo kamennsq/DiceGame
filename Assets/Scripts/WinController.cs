@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WinController : MonoBehaviour
 {
@@ -34,16 +35,19 @@ public class WinController : MonoBehaviour
     [SerializeField]
     private EdgeSO[] goldReward;
 
-    private int chosenReward;
+    [SerializeField]
+    private GameObject acceptButton;
 
-    private int chosenEdge;
+    private int chosenReward = -1;
+
+    private int chosenEdge = -1;
 
     public void startRewarding(string color)
     {
         int i = 0;
         foreach (GameObject infoEdge in dice_1)
         {
-            infoEdge.GetComponent<SpriteRenderer>().sprite = playerDices[0].getEdgeByIndex(i).getSprite();
+            //infoEdge.GetComponent<SpriteRenderer>().sprite = playerDices[0].getEdgeByIndex(i).getSprite();
             infoEdge.GetComponent<RewardEdgeController>().setEdge(playerDices[0].getEdgeByIndex(i));
             i++;
         }
@@ -51,7 +55,7 @@ public class WinController : MonoBehaviour
 
         foreach (GameObject infoEdge in dice_2)
         {
-            infoEdge.GetComponent<SpriteRenderer>().sprite = playerDices[1].getEdgeByIndex(i).getSprite();
+            //infoEdge.GetComponent<SpriteRenderer>().sprite = playerDices[1].getEdgeByIndex(i).getSprite();
             infoEdge.GetComponent<RewardEdgeController>().setEdge(playerDices[1].getEdgeByIndex(i));
             i++;
         }
@@ -59,7 +63,7 @@ public class WinController : MonoBehaviour
 
         foreach (GameObject infoEdge in dice_3)
         {
-            infoEdge.GetComponent<SpriteRenderer>().sprite = playerDices[2].getEdgeByIndex(i).getSprite();
+            //infoEdge.GetComponent<SpriteRenderer>().sprite = playerDices[2].getEdgeByIndex(i).getSprite();
             infoEdge.GetComponent<RewardEdgeController>().setEdge(playerDices[2].getEdgeByIndex(i));
             i++;
         }
@@ -67,7 +71,7 @@ public class WinController : MonoBehaviour
 
         foreach (GameObject infoEdge in dice_4)
         {
-            infoEdge.GetComponent<SpriteRenderer>().sprite = playerDices[3].getEdgeByIndex(i).getSprite();
+            //infoEdge.GetComponent<SpriteRenderer>().sprite = playerDices[3].getEdgeByIndex(i).getSprite();
             infoEdge.GetComponent<RewardEdgeController>().setEdge(playerDices[3].getEdgeByIndex(i));
             i++;
         }
@@ -184,11 +188,24 @@ public class WinController : MonoBehaviour
     public void setChosenEdge(int index)
     {
         chosenEdge = index;
+        if (chosenReward > -1)
+        {
+            acceptButton.GetComponent<Button>().interactable = true;
+        }
     }
 
     public void setRewardEdge(int index)
     {
         chosenReward = index;
+        foreach (GameObject reward in rewards)
+        {
+            reward.GetComponent<SpriteRenderer>().color = Color.grey;
+        }
+        rewards[index].GetComponent<SpriteRenderer>().color = Color.white;
+        if (chosenEdge > -1)
+        {
+            acceptButton.GetComponent<Button>().interactable = true;
+        }
     }
 
     public void getReward()
