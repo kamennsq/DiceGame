@@ -17,5 +17,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f2335ea6969788c45934730dba6119ca, type: 2}
   - {fileID: 11400000, guid: d13268276d198474c927d896e3287429, type: 2}
   prefab: {fileID: 4996392023425387961, guid: f5fe58654480789429dbcdc5eff37a30, type: 3}
-  isChosen: 1
+  isChosen: 0
   color: Blue

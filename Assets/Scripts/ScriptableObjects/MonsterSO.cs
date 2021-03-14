@@ -52,6 +52,11 @@ public class MonsterSO : ScriptableObject
         isChosen = true;
     }
 
+    public void changeChoose()
+    {
+        isChosen = false;
+    }
+
     public bool isThisChosen()
     {
         return isChosen;
