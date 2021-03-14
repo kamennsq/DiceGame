@@ -142,3 +142,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d4a4df8e4ff985ffb80b5cf2e0b8351, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  side: 0
+  heroSO: {fileID: 11400000, guid: 87ac6c4b8f294b24da76f2b2f63517e8, type: 2}
+  monsterSO: {fileID: 11400000, guid: b9df7ef9ef752af4f818db431cba56c3, type: 2}

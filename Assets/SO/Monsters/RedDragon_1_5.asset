@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd0f04d84e2d0ec4785e48736d98f3e4, type: 3}
+  m_Name: RedDragon_1_5
+  m_EditorClassIdentifier: 
+  health: 20
+  dices:
+  - {fileID: 11400000, guid: ac92eb3bb3e900845baf60bcabd039e4, type: 2}
+  - {fileID: 11400000, guid: b2339fc1be3644748bf54387fd5330a6, type: 2}
+  prefab: {fileID: 6259978498501428982, guid: f6cd2b7f690c60640a1181c29869d876, type: 3}
+  isChosen: 0
+  color: Red

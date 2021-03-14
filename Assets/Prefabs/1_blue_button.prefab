@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6136052402066853518}
   - component: {fileID: -9216988030847329607}
   m_Layer: 5
-  m_Name: 1_green_button 2
+  m_Name: 1_blue_button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -142,3 +142,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d4a4df8e4ff985ffb80b5cf2e0b8351, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  side: 0
+  heroSO: {fileID: 11400000, guid: 87ac6c4b8f294b24da76f2b2f63517e8, type: 2}
+  monsterSO: {fileID: 11400000, guid: ea3d1fd4d5c9a6f4fb99695f6fc98c94, type: 2}
