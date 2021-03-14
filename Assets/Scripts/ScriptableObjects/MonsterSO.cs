@@ -14,6 +14,12 @@ public class MonsterSO : ScriptableObject
     [SerializeField]
     private GameObject prefab;
 
+    [SerializeField]
+    private bool isChosen;
+
+    [SerializeField]
+    private string color;
+
     public int getHealth()
     {
         return health;
@@ -39,5 +45,25 @@ public class MonsterSO : ScriptableObject
         {
             return dices[0];
         }
+    }
+
+    public void fightThisMonster()
+    {
+        isChosen = true;
+    }
+
+    public void changeChoose()
+    {
+        isChosen = false;
+    }
+
+    public bool isThisChosen()
+    {
+        return isChosen;
+    }
+
+    public string getColor()
+    {
+        return color;
     }
 }
