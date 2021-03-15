@@ -34,6 +34,10 @@ public class HeroSO : ScriptableObject
 
     [SerializeField]
     private int greenDragonKiller;
+    
+    public short side = 0;
+    
+    public int lvl = 1;
 
     public void setCurrentHealth(int health)
     {

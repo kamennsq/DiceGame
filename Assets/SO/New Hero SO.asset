@@ -26,3 +26,5 @@ MonoBehaviour:
   redDragonKiller: 0
   blueDragonKiller: 0
   greenDragonKiller: 0
+  side: 3
+  lvl: 3
